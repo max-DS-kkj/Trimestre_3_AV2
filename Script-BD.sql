@@ -345,3 +345,15 @@ INNER JOIN escola e ON p.fk_escola = e.id_escola
 WHERE e.nome IN ('Escola Estadual Horizonte do Saber', 'Colégio Municipal Araucária')
 ORDER BY p.nome ASC;
 
+-- Questão 4 
+
+SELECT 
+    t.serie,
+    t.quantidade_aluno,
+    e.nome AS nome_escola
+FROM turma t
+INNER JOIN escola e ON t.fk_escola = e.id_escola
+ORDER BY t.quantidade_aluno DESC
+LIMIT 5;
+
+
