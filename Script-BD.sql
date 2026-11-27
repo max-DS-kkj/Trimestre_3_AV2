@@ -334,3 +334,14 @@ FROM (
 ) AS primeiras_escolas
 ORDER BY nome ASC;
 
+-- Questão 3
+
+SELECT 
+    p.nome AS nome_professor,
+    p.email,
+    e.nome AS nome_escola
+FROM professor p
+INNER JOIN escola e ON p.fk_escola = e.id_escola
+WHERE e.nome IN ('Escola Estadual Horizonte do Saber', 'Colégio Municipal Araucária')
+ORDER BY p.nome ASC;
+
